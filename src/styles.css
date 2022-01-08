@@ -1,0 +1,18 @@
+#main-container {
+    margin: auto;
+    width: 800px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+#convert-btns {
+    display: flex;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    font-size: 18px;
+    color: blue;
+}
