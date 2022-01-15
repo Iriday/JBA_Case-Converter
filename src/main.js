@@ -3,6 +3,7 @@ const upperCaseBtn = document.getElementById("upper-case")
 const lowerCaseBtn = document.getElementById("lower-case")
 const properCaseBtn = document.getElementById("proper-case")
 const sentenceCaseBtn = document.getElementById("sentence-case")
+const saveTextFileBtn = document.getElementById("save-text-file")
 
 function capitalizeAllWords(str) {
     str = str.toLowerCase()
@@ -45,6 +46,17 @@ function capitalizeAllSentences(str) {
     return arr.join("")
 }
 
+function download(data, filename) {
+    const a = document.createElement('a')
+    a.setAttribute("href", "data:text/plain;charset=utf-8," + encodeURIComponent(data))
+    a.setAttribute("download", filename)
+    a.style.display = "none"
+
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+}
+
 
 upperCaseBtn.onclick = () => {
     textarea.value = textarea.value.toUpperCase()
@@ -60,4 +72,8 @@ properCaseBtn.onclick = () => {
 
 sentenceCaseBtn.onclick = () => {
     textarea.value = capitalizeAllSentences(textarea.value)
+}
+
+saveTextFileBtn.onclick = () => {
+    download(textarea.value, "data.txt")
 }

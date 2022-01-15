@@ -10,6 +10,13 @@
     display: flex;
 }
 
+#btns {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
 button {
     padding: 5px;
     margin: 5px;
